@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/pedidos/1/status"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+      "status": "EM_PREPARACAO"
+    }
+order: 11000

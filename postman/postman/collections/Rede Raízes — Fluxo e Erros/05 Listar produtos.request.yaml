@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseUrl}}/produtos?unidade_id=1"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: unidade_id
+    value: "1"
+    disabled: false
+    description: ""
+order: 5000

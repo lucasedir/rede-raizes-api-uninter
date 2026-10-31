@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 7d532024-2833-4d21-818b-5b72e04801cb
+
+localResources:
+  collections:
+    - ../Rede Raízes — Fluxo e Erros
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/Rede Raízes — Fluxo e Erros: 3b7e3593-dc2a-4928-a799-6934f517965b

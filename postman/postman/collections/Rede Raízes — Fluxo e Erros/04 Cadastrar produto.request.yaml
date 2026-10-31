@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/produtos"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+      "unidade_id": 1,
+      "nome": "Baiao de Dois",
+      "preco": 25,
+      "estoque": 20
+    }
+order: 4000

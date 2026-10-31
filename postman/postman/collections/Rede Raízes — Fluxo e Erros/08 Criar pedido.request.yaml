@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/pedidos"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+      "canalPedido": "APP",
+      "itens": [
+        {
+          "produto_id": 1,
+          "quantidade": 2
+        }
+      ]
+    }
+order: 8000

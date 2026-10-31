@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/pagamentos"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+      "pedido_id": 1,
+      "aprovado": true
+    }
+order: 10000

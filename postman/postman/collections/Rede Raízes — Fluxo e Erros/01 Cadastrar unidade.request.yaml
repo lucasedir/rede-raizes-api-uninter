@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/unidades"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "nome": "Centro",
+      "endereco": "Rua A, 10",
+      "telefone": "41999999999"
+    }
+order: 1000
