@@ -76,7 +76,32 @@ class TesteFluxo(unittest.TestCase):
         pid=r.json()['id']
         self.assertEqual(self.cliente.post('/pagamentos',json={'pedido_id':pid,'aprovado':True},headers=self.auth).status_code,201)
         self.assertEqual(self.cliente.post('/pagamentos',json={'pedido_id':pid,'aprovado':True},headers=self.auth).status_code,409)
+        
+    def test_11_consultar_produtos(self):
+        r = self.cliente.get(
+            '/produtos',
+            params={'unidade_id': 1},
+            headers=self.auth
+        )
+        self.assertEqual(r.status_code, 200)
 
+    def test_12_consultar_pedidos(self):
+        r = self.cliente.get(
+            '/pedidos',
+            headers=self.auth
+        )
+        self.assertEqual(r.status_code, 200)
+        self.assertIsInstance(r.json(), (list, dict))
+
+    def test_13_consultar_estoque(self):
+        r = self.cliente.get(
+            '/estoque/1',
+            headers=self.admin
+        )
+        self.assertEqual(r.status_code, 200)
+        self.assertIn('fisico', r.json())
+        self.assertIn('reservado', r.json())
+        self.assertIn('disponivel', r.json())
 
 if __name__ == '__main__':
     unittest.main()
