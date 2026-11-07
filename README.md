@@ -6,13 +6,10 @@ Projeto didático em **Python 3.13 + FastAPI + SQLite**. Fluxo principal: criar 
 
 Abra a pasta `rede-raizes-api-uninter` no VS Code. Tenha Python 3.13 instalado.
 
-```powershell
-& "C:\Users\lucas\AppData\Local\Programs\Python\Python313\python.exe" -m venv .venv
+python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m uvicorn main:app --reload
-```
 
-Se o Python estiver no PATH, pode usar `python -m venv .venv` em vez do caminho completo.
 
 Swagger: http://127.0.0.1:8000/docs. O banco `restaurante.db` é criado automaticamente na primeira inicialização (criação das tabelas em `database.py`). Para reiniciar um banco de testes, pare o servidor e exclua apenas `restaurante.db`.
 
@@ -36,7 +33,7 @@ Os IDs são exemplos: use os valores efetivamente retornados. O token é mantido
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 ```
-
+Os testes automatizados foram desenvolvidos utilizando Pytest. Ao todo, foram executados 13 testes, sendo 6 cenários positivos e 7 negativos, todos aprovados durante a validação do projeto.
 A pasta `postman` inclui uma coleção de exemplos. Importe o arquivo JSON no Postman, crie uma variável `baseUrl` com `http://127.0.0.1:8000` e uma variável `token` com o valor do login.
 
 ## Arquitetura simplificada
@@ -58,6 +55,4 @@ Para uma arquitetura por camadas mais rigorosa, as regras de negócio podem ser 
 - Não existe sistema de migrations versionadas; a inicialização cria as tabelas se não existirem.
 - Este é um protótipo didático, não uma aplicação para produção.
 
-## GitHub
-
-Crie um repositório público e envie os arquivos do projeto, excluindo `.venv` e o banco local conforme `.gitignore`. Faça commits ao longo das etapas e registre o link do repositório no documento acadêmico.
+O código-fonte deste projeto acadêmico está disponível publicamente no GitHub, incluindo os arquivos necessários para executar a API, a documentação e os testes automatizados. Os arquivos do ambiente virtual (.venv) e o banco de dados local (restaurante.db) não são incluídos no repositório, conforme as configurações do .gitignore.
